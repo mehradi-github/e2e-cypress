@@ -60,4 +60,25 @@ describe('our first suite',()=>{
         cy.contains('nb-card', 'Horizontal form').find('[type="email"]')
    });
 
+
+   it('then and wrap methods', async ()=>{
+      cy.visit('http://localhost:4200/')
+      cy.contains('Forms').click()
+      cy.contains('Form Layouts').click()
+
+      cy.contains('nb-card', 'Using the Grid').then( firstForm => {
+         const emailLabelFirst = firstForm.find('[for="inputEmail1"]').text()
+         const passwordLabelFirst = firstForm.find('[for="inputPassword2"]').text()
+         expect(emailLabelFirst).to.equal('Email')
+         expect(passwordLabelFirst).to.equal('Password')
+
+         cy.contains('nb-card', 'Basic form').then( secondForm => {
+             const passwordSecondText = secondForm.find('[for="exampleInputPassword1"]').text()
+             expect(passwordLabelFirst).to.equal(passwordSecondText)
+
+             cy.wrap(secondForm).find('[for="exampleInputPassword1"]').should('contain', 'Password')
+
+         })
+     })
+   });
 });
