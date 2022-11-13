@@ -228,7 +228,7 @@ describe('our first suite',()=>{
     })
 
 
-    it.only('assert property', () => {
+    it('assert property', () => {
 
         function selectDayFromCurrent(day){
             let date = new Date()
@@ -259,5 +259,14 @@ describe('our first suite',()=>{
         })
     })
 
+    it.only('tooltip' , () => {
+        cy.visit('http://localhost:4200/')
+        cy.contains('Modal & Overlays').click()
+        cy.contains('Tooltip').click()
+
+        cy.contains('nb-card', 'Colored Tooltips')
+            .contains('Default').click({force:true})
+        cy.get('nb-tooltip').should('contain', 'This is a tooltip')
+    })
 
 });
