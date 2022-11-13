@@ -35,6 +35,14 @@
 //     }
 //   }
 // }
-Cypress.Commands.add('openHomePage', () => {
+
+Cypress.Commands.add('openHomePage', () => { 
     cy.visit('http://localhost:4200/');
-})
+ })
+declare global {
+    namespace Cypress {
+      interface Chainable {
+        openHomePage(): Chainable<void> 
+      }
+    }
+  }
