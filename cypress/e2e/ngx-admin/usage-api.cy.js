@@ -1,8 +1,13 @@
 /// <reference types="cypress"/>
 
 describe('our first suite',()=>{
+
+    beforeEach('open application', () => {
+        cy.openHomePage()
+    })
+    
    it('first test', async ()=>{
-       cy.visit('http://localhost:4200/');
+      
        cy.contains('Form').click();
        cy.contains('Form Layouts').click();
 
@@ -39,7 +44,7 @@ describe('our first suite',()=>{
    });
 
    it('second test', async ()=>{
-      cy.visit('http://localhost:4200/')
+      
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 
@@ -62,7 +67,7 @@ describe('our first suite',()=>{
 
 
    it('then and wrap methods', async ()=>{
-      cy.visit('http://localhost:4200/')
+      
       cy.contains('Forms').click()
       cy.contains('Form Layouts').click()
 
@@ -84,7 +89,7 @@ describe('our first suite',()=>{
 
 
    it('invoke command', () => {
-    cy.visit('http://localhost:4200/')
+    
     cy.contains('Forms').click()
     cy.contains('Form Layouts').click()
 
@@ -118,7 +123,7 @@ describe('our first suite',()=>{
 
 
     it('radio button', () => {
-        cy.visit('http://localhost:4200/')
+        
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 
@@ -144,7 +149,7 @@ describe('our first suite',()=>{
 
 
     it('check boxes', () => {
-        cy.visit('http://localhost:4200/')
+        
         cy.contains('Modal & Overlays').click()
         cy.contains('Toastr').click()
 
@@ -154,7 +159,7 @@ describe('our first suite',()=>{
     })
 
     it('lists and dropdowns', () => {
-        cy.visit('http://localhost:4200/')
+        
       
         cy.get('nav nb-select').click()
         cy.get('.options-list').contains('Dark').click()
@@ -186,7 +191,7 @@ describe('our first suite',()=>{
 
     
     it('Web tables', () => {
-        cy.visit('http://localhost:4200/')
+        
         cy.contains('Tables & Data').click()
         cy.contains('Smart Table').click()
 
@@ -247,7 +252,7 @@ describe('our first suite',()=>{
             return dateAssert
         }
 
-        cy.visit('http://localhost:4200/')
+        
         cy.contains('Forms').click()
         cy.contains('Datepicker').click()
 
@@ -260,7 +265,7 @@ describe('our first suite',()=>{
     })
 
     it('tooltip' , () => {
-        cy.visit('http://localhost:4200/')
+        
         cy.contains('Modal & Overlays').click()
         cy.contains('Tooltip').click()
 
@@ -272,7 +277,7 @@ describe('our first suite',()=>{
 
     
     it.only('dilog box', () => {
-        cy.visit('http://localhost:4200/')
+        
         cy.contains('Tables & Data').click()
         cy.contains('Smart Table').click()
        
