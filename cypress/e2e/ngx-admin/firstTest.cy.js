@@ -142,4 +142,16 @@ describe('our first suite',()=>{
         })
     })
 
+
+    it('check boxes', () => {
+        cy.visit('http://localhost:4200/')
+        cy.contains('Modal & Overlays').click()
+        cy.contains('Toastr').click()
+
+        cy.get('[type="checkbox"]').eq(0).click({force:true})
+        cy.get('[type="checkbox"]').eq(1).check({force:true})
+
+    })
+
+
 });
