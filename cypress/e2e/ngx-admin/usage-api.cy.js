@@ -259,7 +259,7 @@ describe('our first suite',()=>{
         })
     })
 
-    it.only('tooltip' , () => {
+    it('tooltip' , () => {
         cy.visit('http://localhost:4200/')
         cy.contains('Modal & Overlays').click()
         cy.contains('Tooltip').click()
@@ -269,4 +269,23 @@ describe('our first suite',()=>{
         cy.get('nb-tooltip').should('contain', 'This is a tooltip')
     })
 
+
+    
+    it.only('dilog box', () => {
+        cy.visit('http://localhost:4200/')
+        cy.contains('Tables & Data').click()
+        cy.contains('Smart Table').click()
+       
+        const stub = cy.stub()
+        cy.on('window:confirm', stub)
+        cy.get('tbody tr').first().find('.nb-trash').click({force:true}).then(() => {
+            expect(stub.getCall(0)).to.be.calledWith('Are you sure you want to delete?')
+        })
+
+      
+        cy.get('tbody tr').first().find('.nb-trash').click({force:true})
+        cy.on('window:confirm', () => false)
+
+
+    })
 });
