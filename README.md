@@ -23,7 +23,7 @@ npm run cypress:open
 ## Api
 you can find here [table of contents](https://docs.cypress.io/api/table-of-contents):
 - Events
-- Assertions
+- [Assertions](https://docs.cypress.io/guides/references/assertions)
 - Commands
 - Utilities
 - Cypress API
