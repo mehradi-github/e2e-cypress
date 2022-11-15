@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+import {navigateTo} from '../support/page-objects/navigationPage'
+
 describe('our first suite',()=>{
 
     beforeEach('open application', () => {
@@ -45,8 +47,7 @@ describe('our first suite',()=>{
 
    it('second test', async ()=>{
       
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+       navigateTo.formLayoutsPage();
 
         cy.get('[data-cy="signInButton"]')
 
@@ -68,8 +69,7 @@ describe('our first suite',()=>{
 
    it('then and wrap methods', async ()=>{
       
-      cy.contains('Forms').click()
-      cy.contains('Form Layouts').click()
+    navigateTo.formLayoutsPage();
 
       cy.contains('nb-card', 'Using the Grid').then( firstForm => {
          const emailLabelFirst = firstForm.find('[for="inputEmail1"]').text()
@@ -90,8 +90,7 @@ describe('our first suite',()=>{
 
    it('invoke command', () => {
     
-    cy.contains('Forms').click()
-    cy.contains('Form Layouts').click()
+    navigateTo.formLayoutsPage();
 
     cy.get('[for="exampleInputEmail1"]')
         .should('contain', 'Email address')
@@ -124,8 +123,7 @@ describe('our first suite',()=>{
 
     it('radio button', () => {
         
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        navigateTo.formLayoutsPage();
 
         cy.contains('nb-card', 'Using the Grid').find('[type="radio"]').then( radioButtons => {
             cy.wrap(radioButtons)
@@ -150,8 +148,7 @@ describe('our first suite',()=>{
 
     it('check boxes', () => {
         
-        cy.contains('Modal & Overlays').click()
-        cy.contains('Toastr').click()
+        navigateTo.toasterPage();
 
         cy.get('[type="checkbox"]').eq(0).click({force:true})
         cy.get('[type="checkbox"]').eq(1).check({force:true})
@@ -192,8 +189,7 @@ describe('our first suite',()=>{
     
     it('Web tables', () => {
         
-        cy.contains('Tables & Data').click()
-        cy.contains('Smart Table').click()
+        navigateTo.smartTablePage();
 
         cy.get('tbody').contains('tr', 'Larry').then( tableRow => {
             cy.wrap(tableRow).find('.nb-edit').click({force:true})
@@ -253,8 +249,7 @@ describe('our first suite',()=>{
         }
 
         
-        cy.contains('Forms').click()
-        cy.contains('Datepicker').click()
+        navigateTo.datepickerPage();
 
         cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
             cy.wrap(input).click({force:true})
@@ -266,8 +261,7 @@ describe('our first suite',()=>{
 
     it('tooltip' , () => {
         
-        cy.contains('Modal & Overlays').click()
-        cy.contains('Tooltip').click()
+        navigateTo.tooltipPage();
 
         cy.contains('nb-card', 'Colored Tooltips')
             .contains('Default').click({force:true})
@@ -278,8 +272,7 @@ describe('our first suite',()=>{
     
     it.only('dilog box', () => {
         
-        cy.contains('Tables & Data').click()
-        cy.contains('Smart Table').click()
+        navigateTo.smartTablePage();
        
         const stub = cy.stub()
         cy.on('window:confirm', stub)
