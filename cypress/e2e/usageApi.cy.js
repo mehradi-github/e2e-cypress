@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import {navigateTo} from '../support/page-objects/navigationPage'
+import {navigateTo} from '../support/page-objects/navigationPage';
 
 describe('our first suite',()=>{
 
