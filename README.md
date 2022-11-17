@@ -10,17 +10,6 @@ This is modified and more lightweight version of original [ngx-admin](https://gi
 npm install cypress --save-dev
 npx cypress open
 ```
-file: package.json
-```json
-{
-  "scripts": {
-    "cypress:open": "cypress open"
-  }
-}
-```
-```sh
-npm run cypress:open
-```
 ## APIs
 you can find here [table of contents](https://docs.cypress.io/api/table-of-contents):
 - Events
