@@ -14,7 +14,7 @@ npx cypress open
 you can find here [table of contents](https://docs.cypress.io/api/table-of-contents):
 - Events
 - [Assertions](https://docs.cypress.io/guides/references/assertions)
-  - [Chi](https://github.com/chaijs/chai)
+  - [Chai](https://github.com/chaijs/chai)
   - BDD-Assertions
   - TDD-Assertions
   - [Chai-jQuery](https://github.com/chaijs/chai-jquery)
