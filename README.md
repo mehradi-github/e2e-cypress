@@ -11,7 +11,7 @@ npm install cypress --save-dev
 npx cypress open
 ```
 ## APIs
-you can find here [table of contents](https://docs.cypress.io/api/table-of-contents):
+You can find here [table of contents](https://docs.cypress.io/api/table-of-contents):
 - Events
 - [Assertions](https://docs.cypress.io/guides/references/assertions)
   - [Chai](https://github.com/chaijs/chai)
